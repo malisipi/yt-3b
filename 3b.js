@@ -22,16 +22,21 @@ window.__register_yt3b = () => {
 	    
 	    if(window.__video.duration==window.__video.currentTime){
 	        setTimeout(() => {
-	            if(!document.querySelector(".ytp-autonav-endscreen-upnext-header-countdown-number")) return;
-                window.__prev_timeout = Number(document.querySelector(".ytp-autonav-endscreen-upnext-header-countdown-number").innerText);
+	            if(!document.querySelector(".ytp-autonav-endscreen-upnext-button.ytp-autonav-endscreen-upnext-play-button.ytp-autonav-endscreen-upnext-button-rounded") || document.querySelector(".ytp-autonav-toggle-button").getAttribute("aria-checked") == "false") return;
+	            if(!document.querySelector(".ytp-autonav-endscreen-upnext-header-countdown-number")){
+	                window.__prev_timeout = -9;
+	            } else {
+	                window.__prev_timeout = Number(document.querySelector(".ytp-autonav-endscreen-upnext-header-countdown-number").innerText);
+	            };
+	            
                 setTimeout(()=>{
-                    if(Number(document.querySelector(".ytp-autonav-endscreen-upnext-header-countdown-number")?.innerText)==window.__prev_timeout){
+                    if(window.__prev_timeout == -9 || Number(document.querySelector(".ytp-autonav-endscreen-upnext-header-countdown-number")?.innerText)==window.__prev_timeout){
                         console.info("3B||YT trying to block autoplaying. (Skipping..)");
                         document.querySelector(".ytp-autonav-endscreen-upnext-button.ytp-autonav-endscreen-upnext-play-button.ytp-autonav-endscreen-upnext-button-rounded").click();
                     };
-                },Number(document.querySelector(".ytp-autonav-endscreen-upnext-header-countdown-number").innerText)*1000 - 500);
+                }, window.__prev_timeout * 1000 - 500);
             }, 250);
-        }
+        };
 	});
 };
 
