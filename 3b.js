@@ -17,6 +17,8 @@ window.__register_yt3b = () => {
 			document.querySelector("tp-yt-iron-overlay-backdrop").remove();
 			document.querySelector("ytd-popup-container").remove();
 			console.info("3B||YT trying to show blocker popup. (Removing..)");
+			document.body.append(document.createElement("ytd-popup-container"));
+			console.info("3B||Restoring <ytd-popup-container> for showing unrelated dialogs")
 			window.__video.play();
 	    };
 	    
