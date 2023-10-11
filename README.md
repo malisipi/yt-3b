@@ -2,9 +2,13 @@
 
 Use YouTube without useless ads!
 
+![](https://github.com/malisipi/yt-3b/assets/87281783/9f3e5643-f4fd-4cde-949d-45cb08c7b7ac)
+
 ## Features
 
-* Remove ADs without YT detects it :D
+* Remove ADs.
+* Remove unskippable ADs.
+* Stay hidden from YT Adblocker Detector
 
 ## Disclaimer
 
