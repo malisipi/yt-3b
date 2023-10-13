@@ -18,7 +18,7 @@ window.__register_yt3b = () => {
 	};
 		
 	window.__video.addEventListener("durationchange", () => {        
-        if(window.__video.duration < 15) {
+        if(window.__video.duration < 25) {
             window.__yt3b_notification("Unskippable ad removed");
             window.__video.currentTime = window.__video.duration;
         };
