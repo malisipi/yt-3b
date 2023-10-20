@@ -1,3 +1,5 @@
+window.__block_ad_count = 0;
+
 window.__yt3b_notification = (text) => {
 	console.info("3B || " + text);
 	document.querySelector(".__yt3b_notification")?.remove();
@@ -19,14 +21,14 @@ window.__register_yt3b = () => {
 		
 	window.__video.addEventListener("durationchange", () => {        
         if(window.__video.duration < 25) {
-            window.__yt3b_notification("Unskippable ad removed");
+            window.__yt3b_notification("Unskippable ad removed (x"+ ++window.__block_ad_count +")");
             window.__video.currentTime = window.__video.duration;
         };
 	});
 	
 	window.__video.addEventListener("timeupdate", () => {
 	    if(!!document.querySelector(".ytp-ad-text.ytp-ad-skip-button-text")){
-            window.__yt3b_notification("Ad removed");
+            window.__yt3b_notification("Ad removed (x"+ ++window.__block_ad_count +")");
             document.querySelector(".ytp-ad-text.ytp-ad-skip-button-text").click();
         };
 	});
@@ -36,6 +38,7 @@ setTimeout(window.__register_yt3b, 50);
 document.head.insertAdjacentHTML("beforeend",`<style>
 #sparkles-container, yt-mealbar-promo-renderer, #player-ads, ytd-ad-slot-renderer,
 ytd-page-top-ad-layout-renderer, ytd-ad-engagement-panel-banner-renderer,
+ytd-banner-promo-renderer, .masthead-ad,
 *[target-id="engagement-panel-ads"], ytmusic-mealbar-promo-renderer {
 	display: none !important;
 }
