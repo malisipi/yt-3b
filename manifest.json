@@ -20,5 +20,10 @@
 			],
 			"js": ["3b.js"]
 		}
-	]
+	],
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "yt-3b@malisipi.github.io"
+		}
+	}
 }
