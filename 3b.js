@@ -36,12 +36,14 @@ window.__register_yt3b = () => {
 
 setTimeout(window.__register_yt3b, 50);
 document.head.insertAdjacentHTML("beforeend",`<style>
+/*
 #sparkles-container, yt-mealbar-promo-renderer, #player-ads, ytd-ad-slot-renderer,
 ytd-page-top-ad-layout-renderer, ytd-ad-engagement-panel-banner-renderer,
 ytd-banner-promo-renderer, .masthead-ad,
 *[target-id="engagement-panel-ads"], ytmusic-mealbar-promo-renderer {
 	display: none !important;
 }
+*/
 
 .__yt3b_notification {
 	border-radius: 10px;
